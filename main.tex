@@ -1,0 +1,199 @@
+%---------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%---------------------------------------------------------------------------------------------%
+
+
+
+\documentclass[a4paper,8pt]{article}
+
+
+% 数学公式
+\usepackage{amsmath}
+% 插图
+\usepackage{graphicx}
+% 颜色
+\usepackage{xcolor}
+% 表格
+\usepackage{array}
+% 字体
+\usepackage{fontspec}
+% 中文
+\usepackage[UTF8]{ctex}
+% fontawesome图标
+\usepackage{fontawesome5}
+% 修改\section
+\usepackage{titlesec}
+% 修改section的格式
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+% \titlespacing{\section}{0pt}{-5pt}{2pt}
+\titlespacing{\section}{0pt}{0pt}{5pt}
+% 字体
+\usepackage{fontspec}
+% 字体大小和行间距
+\usepackage{etoolbox}
+% 自定义
+\usepackage{resume}
+% 字体格式修改
+\usepackage{setspace}
+% % 画直线
+% \usepackage{tikz}
+% 页面布局
+\RequirePackage[a4paper]{geometry}
+\geometry{
+    textwidth=1380mm,
+    textheight=2150mm,
+    left=27mm,
+    right=27mm,
+    top=15.4mm,
+    bottom=15.4mm,
+    headheight=2.17cm,
+    headsep=4mm,
+    footskip=12mm,
+    heightrounded,
+}
+% 超链接颜色修改
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+
+%-------------------------------------------------------------------------------
+%	自定义
+%-------------------------------------------------------------------------------
+
+
+
+%-------------------------------------------------------------------------------
+%	简历正文
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+% 去掉页码
+\pagestyle{empty}
+% 去除缩进
+\setlength{\parindent}{0pt}
+
+%-------------------------------------------------------------------------------
+%	社交信息
+%-------------------------------------------------------------------------------
+
+\begin{center}
+    \textbf{\Huge 蔡伟杰} \\ 
+    \vspace{5pt} % 行间距
+    \hspace{10pt}
+    \href{tel:+8613560851572}{\faPhoneVolume \ 13560851572} | 
+    \href{weixin:Cxm71701}{\faWeixin \ Cxm71701} | 
+    \href{https://github.com/hexWars}{\faGithub \ hexWars}  | 
+    \href{mailto:cxm71701@gmail.com}{\faEnvelope \ cxm71701@gmail.com} | 
+    \href{https://blog.sehnsucht.top/}{\faRss \ blog.sehnsucht.top}
+    \vspace{-5pt}
+\end{center}
+
+%-------------------------------------------------------------------------------
+%	教育经历
+%-------------------------------------------------------------------------------
+
+\ignorespaces
+\section{\textbf{教育经历}}
+\begin{apart}{6}{0.5}
+    \textbf{北京师范大学珠海分校} \hfill 2019-2023 \\
+    软件工程 \ 本科 \ 信息技术学院 \hfill GPA: 3.5(专业前\%5)
+\end{apart}
+\ignorespaces
+
+%-------------------------------------------------------------------------------
+%	专业技能
+%-------------------------------------------------------------------------------
+
+\section{\textbf{专业技能}}
+\begin{apart}{6}{0.5}
+    \textbullet 掌握常见数据结构及算法，具有良好的编程习惯 \\
+    \textbullet 熟悉SpringBoot和Node.js进行后台开发 \\
+    \textbullet 熟悉Linux常见命令以及Git等工具的使用 \\
+    \textbullet 熟悉HTML，CSS，JavaScript的使用 \\
+    \textbullet 熟悉JSP，Thymeleaf，FreeMarker等模板引擎 \\
+    \textbullet 了解Jenkins持续集成，自动化部署，使用过Jmeter和Selenium \\
+    \textbullet 了解Docker容器原理并拥有使用经验 \\
+    \textbullet 了解Redis以及其简单使用 \\
+
+大一开始在CSDN发表技术文章，至今约300篇，浏览量约13w，全站排名最高约\textbf{5000}， \href{https://blog.csdn.net/Dueser}{博客地址}
+\end{apart}
+\ignorespaces
+
+%-------------------------------------------------------------------------------
+%	荣誉奖项
+%-------------------------------------------------------------------------------
+
+\section{\textbf{荣誉奖项}}
+\begin{apart}{3}{7}
+    大学生创新创业项目（国家级）两项 \\
+    专业一等奖学金（三次），校优秀学生干部（一次） \\
+    北京师范大学珠海校区“互联网++”大学生创新创业大赛“红旅创意组”金奖 \hfill 2022年6月 \\
+    国家软件著作权登记证书（一项）\hfill 2022年5月 \\
+    十三届蓝桥杯省赛一等奖 \hfill 2022年4月 \\
+    PAT乙级满分（1/982） \hfill 2021年12月 \\
+    第九届“逐鹿今朝”大学生创业计划竞赛（校赛）三等奖 \hfill 2021年12月 \\
+    （第三届）算法设计与编程挑战赛（秋季赛）团队赛组铜奖 \hfill 2021年11月 \\
+    （第三届）算法设计与编程挑战赛（秋季赛）个人赛组银奖 \hfill 2021年11月
+\end{apart}
+\ignorespaces
+
+%-------------------------------------------------------------------------------
+%	社团和组织经历
+%-------------------------------------------------------------------------------
+
+\section{\textbf{社团和组织经历}}
+\begin{apart}{3}{7}
+    程序设计爱好者协会 \hfill 2020年10月 -- 2021年10月 \\
+    会长 \\
+    \textbullet 负责校内程序设计竞赛的出题和测题以及协会招新，协助学院举办“远光杯”粤澳计算机程序设计大赛等多项大型活动 \\
+    \textbullet 同时管理宣传部，技术部，竞赛部，组织部近40人，任期结束时在学生社团评比中所在社团获得总评\textbf{第一}的成绩
+\end{apart}
+\ignorespaces
+
+%-------------------------------------------------------------------------------
+%	实习经验
+%-------------------------------------------------------------------------------
+
+\section{\textbf{实习经验}}
+
+%-------------------------------------------------------------------------------
+%	项目经历
+%-------------------------------------------------------------------------------
+
+\section{\textbf{项目经历}}
+
+%-------------------------------------------------------------------------------
+%	自我评价
+%-------------------------------------------------------------------------------
+
+
+\section{\textbf{自我评价}}
+执着，喜欢思考，爱好广泛，拥有冷静的内心和炽热的灵魂，独特的思维角度 \\
+从第一次AC开始，从第一次发博客开始，在思考中不断学习，希望能和更加优秀的人一起共事 \\
+热爱开源，热爱技术，对代码的美感深深的吸引
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}

@@ -27,14 +27,14 @@
 
 % https://www.overleaf.com/latex/templates/autocv/scfvqfpxncwb
 
-% article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+% article class because we want to fully customize the page and not use a cv template article 文章类，因为我们想完全自定义页面而不是使用简历模板
+\documentclass[a4paper,8pt]{article}
 
 %----------------------------------------------------------------------------------------
-%	FONT
+%	FONT 字体
 %----------------------------------------------------------------------------------------
 
-% % fontspec allows you to use TTF/OTF fonts directly
+% % fontspec allows you to use TTF/OTF fonts directly ontspec 允许你直接使用 TTF/OTF 字体🔹fontspec 让你可以直接使用 TTF/OTF 字体
 % \usepackage{fontspec}
 % \defaultfontfeatures{Ligatures=TeX}
 
@@ -47,7 +47,7 @@
 % {Fontin.otf}
 
 %----------------------------------------------------------------------------------------
-%	PACKAGES
+%	PACKAGES 包
 %----------------------------------------------------------------------------------------
 \usepackage{url}
 \usepackage{parskip} 	
@@ -97,6 +97,15 @@
 %for social icons
 \usepackage{fontawesome5}
 
+%引入中文
+\usepackage[UTF8]{ctex}
+
+\newcommand{\resumeItem}[1]{
+    \item\small{
+        {#1 \vspace{-12pt}}
+    }
+}
+
 %debug page outer frames
 %\usepackage{showframe}
 
@@ -119,7 +128,7 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{cwj} \\[7.5pt]
+\Huge{蔡伟杰} \\[7.5pt]
 \href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ hexWars} \ $|$ \ 
 % \href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
 \href{https://blog.sehnsucht.top}{\raisebox{-0.05\height}\faGlobe \ blog.sehnsucht.top} \ $|$ \ 
@@ -128,18 +137,67 @@
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
+%	EDUCATION
 %----------------------------------------------------------------------------------------
+\section{教育经历}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+    % 2019 - 2023 & 本科 (软件工程) at \textbf{北京师范大学珠海分校} \hfill \normalsize GPA: 3.5(专业前\%5) \\
+    \textbf{北京师范大学珠海分校} & \hfill \normalsize 2019-2023 \\
+    {软件工程} {本科} {信息技术学院} & \hfill \normalsize 珠海 \\
+    \normalsize GPA: 3.5(专业前\%5) \\
+\end{tabularx}
 
-%Interests/ Keywords/ Summary
-\section{Summary}
-This CV can also be automatically complied and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{专业技能}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+% Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
+% Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\
+
+掌握常见数据结构及算法，具有良好的编程习惯 \\
+熟悉SpringBoot和Node.js进行后台开发 \\
+熟悉Linux常见命令以及Git等工具的使用 \\
+熟悉HTML，CSS，JavaScript的使用 \\
+熟悉JSP，Thymeleaf，FreeMarker等模板引擎 \\
+了解Jenkins持续集成，自动化部署，使用过Jmeter和Selenium \\
+了解Docker容器原理并拥有使用经验 \\
+了解Redis以及其简单使用 \\
+大一开始在CSDN发表技术博客，至今约300篇，浏览量约13w，\textbf{全站排名最高约5000} \\
+博客地址：\href{https://blog.csdn.net/Dueser}{\raisebox{-0.05\height} \ blog.csdn.net/Dueser} 
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{荣誉奖项}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+    大学生创新创业项目（国家级）两项 \\
+    专业一等奖学金（三次），校优秀学生干部（一次）\\
+    北京师范大学珠海校区“互联网++”大学生创新创业大赛“红旅创意组”金奖 & \hfill \normalsize 2022年6月\\
+    国家软件著作权登记证书（一项） & \hfill \normalsize 2022年6月\\
+    十三届蓝桥杯省赛一等奖 & \hfill \normalsize 2022年4月\\
+    PAT乙级满分（1/982） & \hfill \normalsize 2021年12月\\
+    第九届“逐鹿今朝”大学生创业计划竞赛（校赛）三等奖 & \hfill \normalsize 2021年12月\\
+    （第三届）算法设计与编程挑战赛（秋季赛）团队赛组铜奖 & \hfill \normalsize 2021年11月\\
+    （第三届）算法设计与编程挑战赛（秋季赛）个人赛组银奖 & \hfill \normalsize 2021年11月\\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{社团和组织经历}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+    \textbf{程序设计爱好者协会} & \hfill \normalsize 2020年10月 - 2021年10月 \\
+    会长 \\
+    \resumeItem 负责校内程序设计竞赛的出题和测题以及协会招新,协助学院举办“远光杯”粤澳计算机程序设计大赛等多项大型活动,同时管理宣传部，技术部，竞赛部，组织部近40人,任期结束时在学生社团评比中所在社团获得总评\textbf{第一}的成绩
+    % 负责校内程序设计竞赛的出题和测题以及协会招新,协助学院举办“远光杯”粤澳计算机程序设计大赛等多项大型活动,同时管理宣传部，技术部，竞赛部，组织部近40人,任期结束时在学生社团评比中所在社团获得总评\textbf{第一}的成绩
+\end{tabularx}
 
 %Experience
-\section{Work Experience}
-
+\section{实习经验}
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Designation} & \hfill Jan 2021 - present \\[3.75pt]
+\textbf{777} & \hfill Jan 2021 - present \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
 \end{tabularx}
 
@@ -156,7 +214,7 @@ This CV can also be automatically complied and published using GitHub Actions. F
 \end{tabularx}
 
 %Projects
-\section{Projects}
+\section{项目经历}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
@@ -164,36 +222,14 @@ This CV can also be automatically complied and published using GitHub Actions. F
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-%	EDUCATION
+% EXPERIENCE SECTIONS
 %----------------------------------------------------------------------------------------
-\section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
 
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
-
-2022 & Class 12th Some Board \hfill  (Grades) \\
-
-2021 & Class 10th Some Board \hfill  (Grades) \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
-
-%----------------------------------------------------------------------------------------
-%	SKILLS
-%----------------------------------------------------------------------------------------
-\section{Skills6666}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
-\end{tabularx}
+%Interests/ Keywords/ Summary
+\section{自我评价}
+执着，喜欢思考，爱好广泛，拥有冷静的内心和炽热的灵魂，独特的思维角度 \\
+从第一次AC开始，从第一次发博客开始，在思考中不断学习，希望能和更加优秀的人一起共事 \\
+热爱开源，热爱技术，对代码的美感深深的吸引
 
 \vfill
 \center{\footnotesize Last updated: \today}

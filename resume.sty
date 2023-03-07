@@ -1,0 +1,53 @@
+
+% resume.sty
+%
+% A simple LaTeX package
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{resume}[2023/03/06 v1.0 My LaTeX package]
+
+% --------------------------------------------------------------
+% --------------------------- package
+% --------------------------------------------------------------
+
+% 字体
+\RequirePackage{fontspec}
+% 字体大小和行间距
+\RequirePackage{etoolbox}
+% 字体
+\RequirePackage{setspace}
+
+% --------------------------------------------------------------
+% --------------------------- command
+% --------------------------------------------------------------
+
+
+% 前面有点
+\newcommand{\dotitem}[1]{
+    \item {#1}
+}
+
+% 左右
+\newcommand{\lr}[2]{
+    {#1} \hfill {#2}
+}
+
+% 普通
+\newcommand{\common}[1]{
+    {#1}
+}
+
+% --------------------------------------------------------------
+% --------------------------- environment
+% --------------------------------------------------------------
+
+% 设置字体大小和行间距，\begin{myenv}{12pt}{1.5}
+% \newenvironment{myenv}[2]
+% {\BeforeBeginEnvironment{myenv}{\begin{spacing}{#2}\fontsize{#1}{#1}\selectfont}%
+% \AfterEndEnvironment{myenv}{\end{spacing}}}{}
+
+\newcommand{\apart}[2]
+{
+    \fontsize{#1}{#2}\selectfont
+    \setstretch{#2}
+}
