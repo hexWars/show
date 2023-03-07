@@ -1,4 +1,4 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%---------------------------------------------------------------------------------------------%
 %	The MIT License (MIT)
 %
 %	Copyright (c) 2021 Jitin Nair
@@ -19,214 +19,176 @@
 %	THE SOFTWARE.
 %	
 %
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%---------------------------------------------------------------------------------------------%
 
-%----------------------------------------------------------------------------------------
-%	DOCUMENT DEFINITION
-%----------------------------------------------------------------------------------------
 
-% https://www.overleaf.com/latex/templates/autocv/scfvqfpxncwb
 
-% article class because we want to fully customize the page and not use a cv template article 文章类，因为我们想完全自定义页面而不是使用简历模板
 \documentclass[a4paper,8pt]{article}
 
-%----------------------------------------------------------------------------------------
-%	FONT 字体
-%----------------------------------------------------------------------------------------
 
-% % fontspec allows you to use TTF/OTF fonts directly ontspec 允许你直接使用 TTF/OTF 字体🔹fontspec 让你可以直接使用 TTF/OTF 字体
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
-
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES 包
-%----------------------------------------------------------------------------------------
-\usepackage{url}
-\usepackage{parskip} 	
-
-%other packages for formatting
-\RequirePackage{color}
-\RequirePackage{graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
-
-
-%tabularx environment
-\usepackage{tabularx}
-
-%for lists within experience section
-\usepackage{enumitem}
-
-% centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-%to prevent spillover of tabular into next pages
-\usepackage{supertabular}
-\usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
-
-%custom \section
-\usepackage{titlesec}				
-\usepackage{multicol}
-\usepackage{multirow}
-
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
-
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
+% 数学公式
+\usepackage{amsmath}
+% 插图
+\usepackage{graphicx}
+% 颜色
+\usepackage{xcolor}
+% 表格
+\usepackage{array}
+% 字体
+\usepackage{fontspec}
+% 中文
+\usepackage[UTF8]{ctex}
+% fontawesome图标
+\usepackage{fontawesome5}
+% 修改\section
+\usepackage{titlesec}
+% 修改section的格式
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{}[\titlerule]
+% \titlespacing{\section}{0pt}{-5pt}{2pt}
+\titlespacing{\section}{0pt}{0pt}{5pt}
+% 字体
+\usepackage{fontspec}
+% 字体大小和行间距
+\usepackage{etoolbox}
+% 自定义
+\usepackage{resume}
+% 字体格式修改
+\usepackage{setspace}
+% % 画直线
+% \usepackage{tikz}
+% 页面布局
+\RequirePackage[a4paper]{geometry}
+\geometry{
+    textwidth=1380mm,
+    textheight=2150mm,
+    left=27mm,
+    right=27mm,
+    top=15.4mm,
+    bottom=15.4mm,
+    headheight=2.17cm,
+    headsep=4mm,
+    footskip=12mm,
+    heightrounded,
+}
+% 超链接颜色修改
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
 
-%for social icons
-\usepackage{fontawesome5}
 
-%引入中文
-\usepackage[UTF8]{ctex}
+%-------------------------------------------------------------------------------
+%	自定义
+%-------------------------------------------------------------------------------
 
-\newcommand{\resumeItem}[1]{
-    \item\small{
-        {#1 \vspace{-12pt}}
-    }
-}
 
-%debug page outer frames
-%\usepackage{showframe}
 
-%----------------------------------------------------------------------------------------
-%	BEGIN DOCUMENT
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%	简历正文
+%-------------------------------------------------------------------------------
+
 \begin{document}
 
-% non-numbered pages
-\pagestyle{empty} 
+% 去掉页码
+\pagestyle{empty}
+% 去除缩进
+\setlength{\parindent}{0pt}
 
-%----------------------------------------------------------------------------------------
-%	TITLE
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%	社交信息
+%-------------------------------------------------------------------------------
 
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
+\begin{center}
+    \textbf{\Huge 蔡伟杰} \\ 
+    \vspace{5pt} % 行间距
+    \hspace{10pt}
+    \href{tel:+8613560851572}{\faPhoneVolume \ 13560851572} | 
+    \href{weixin:Cxm71701}{\faWeixin \ Cxm71701} | 
+    \href{https://github.com/hexWars}{\faGithub \ hexWars}  | 
+    \href{mailto:cxm71701@gmail.com}{\faEnvelope \ cxm71701@gmail.com} | 
+    \href{https://blog.sehnsucht.top/}{\faRss \ blog.sehnsucht.top}
+    \vspace{-5pt}
+\end{center}
 
-\begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{蔡伟杰} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ hexWars} \ $|$ \ 
-% \href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://blog.sehnsucht.top}{\raisebox{-0.05\height}\faGlobe \ blog.sehnsucht.top} \ $|$ \ 
-\href{mailto:xm71701@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ cxm71701@gmail.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +86 13560851572} \\
-\end{tabularx}
+%-------------------------------------------------------------------------------
+%	教育经历
+%-------------------------------------------------------------------------------
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
-\section{教育经历}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-    % 2019 - 2023 & 本科 (软件工程) at \textbf{北京师范大学珠海分校} \hfill \normalsize GPA: 3.5(专业前\%5) \\
-    \textbf{北京师范大学珠海分校} & \hfill \normalsize 2019-2023 \\
-    {软件工程} {本科} {信息技术学院} & \hfill \normalsize 珠海 \\
-    \normalsize GPA: 3.5(专业前\%5) \\
-\end{tabularx}
+\ignorespaces
+\section{\textbf{教育经历}}
+\begin{apart}{6}{0.5}
+    \textbf{北京师范大学珠海分校} \hfill 2019-2023 \\
+    软件工程 \ 本科 \ 信息技术学院 \hfill GPA: 3.5(专业前\%5)
+\end{apart}
+\ignorespaces
 
-%----------------------------------------------------------------------------------------
-%	SKILLS
-%----------------------------------------------------------------------------------------
-\section{专业技能}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-% Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-% Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\
+%-------------------------------------------------------------------------------
+%	专业技能
+%-------------------------------------------------------------------------------
 
-掌握常见数据结构及算法，具有良好的编程习惯 \\
-熟悉SpringBoot和Node.js进行后台开发 \\
-熟悉Linux常见命令以及Git等工具的使用 \\
-熟悉HTML，CSS，JavaScript的使用 \\
-熟悉JSP，Thymeleaf，FreeMarker等模板引擎 \\
-了解Jenkins持续集成，自动化部署，使用过Jmeter和Selenium \\
-了解Docker容器原理并拥有使用经验 \\
-了解Redis以及其简单使用 \\
-大一开始在CSDN发表技术博客，至今约300篇，浏览量约13w，\textbf{全站排名最高约5000} \\
-博客地址：\href{https://blog.csdn.net/Dueser}{\raisebox{-0.05\height} \ blog.csdn.net/Dueser} 
-\end{tabularx}
+\section{\textbf{专业技能}}
+\begin{apart}{6}{0.5}
+    \textbullet 掌握常见数据结构及算法，具有良好的编程习惯 \\
+    \textbullet 熟悉SpringBoot和Node.js进行后台开发 \\
+    \textbullet 熟悉Linux常见命令以及Git等工具的使用 \\
+    \textbullet 熟悉HTML，CSS，JavaScript的使用 \\
+    \textbullet 熟悉JSP，Thymeleaf，FreeMarker等模板引擎 \\
+    \textbullet 了解Jenkins持续集成，自动化部署，使用过Jmeter和Selenium \\
+    \textbullet 了解Docker容器原理并拥有使用经验 \\
+    \textbullet 了解Redis以及其简单使用 \\
 
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{荣誉奖项}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
+大一开始在CSDN发表技术文章，至今约300篇，浏览量约13w，全站排名最高约\textbf{5000}， \href{https://blog.csdn.net/Dueser}{博客地址}
+\end{apart}
+\ignorespaces
+
+%-------------------------------------------------------------------------------
+%	荣誉奖项
+%-------------------------------------------------------------------------------
+
+\section{\textbf{荣誉奖项}}
+\begin{apart}{3}{7}
     大学生创新创业项目（国家级）两项 \\
-    专业一等奖学金（三次），校优秀学生干部（一次）\\
-    北京师范大学珠海校区“互联网++”大学生创新创业大赛“红旅创意组”金奖 & \hfill \normalsize 2022年6月\\
-    国家软件著作权登记证书（一项） & \hfill \normalsize 2022年6月\\
-    十三届蓝桥杯省赛一等奖 & \hfill \normalsize 2022年4月\\
-    PAT乙级满分（1/982） & \hfill \normalsize 2021年12月\\
-    第九届“逐鹿今朝”大学生创业计划竞赛（校赛）三等奖 & \hfill \normalsize 2021年12月\\
-    （第三届）算法设计与编程挑战赛（秋季赛）团队赛组铜奖 & \hfill \normalsize 2021年11月\\
-    （第三届）算法设计与编程挑战赛（秋季赛）个人赛组银奖 & \hfill \normalsize 2021年11月\\
-\end{tabularx}
+    专业一等奖学金（三次），校优秀学生干部（一次） \\
+    北京师范大学珠海校区“互联网++”大学生创新创业大赛“红旅创意组”金奖 \hfill 2022年6月 \\
+    国家软件著作权登记证书（一项）\hfill 2022年5月 \\
+    十三届蓝桥杯省赛一等奖 \hfill 2022年4月 \\
+    PAT乙级满分（1/982） \hfill 2021年12月 \\
+    第九届“逐鹿今朝”大学生创业计划竞赛（校赛）三等奖 \hfill 2021年12月 \\
+    （第三届）算法设计与编程挑战赛（秋季赛）团队赛组铜奖 \hfill 2021年11月 \\
+    （第三届）算法设计与编程挑战赛（秋季赛）个人赛组银奖 \hfill 2021年11月
+\end{apart}
+\ignorespaces
 
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{社团和组织经历}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-    \textbf{程序设计爱好者协会} & \hfill \normalsize 2020年10月 - 2021年10月 \\
+%-------------------------------------------------------------------------------
+%	社团和组织经历
+%-------------------------------------------------------------------------------
+
+\section{\textbf{社团和组织经历}}
+\begin{apart}{3}{7}
+    程序设计爱好者协会 \hfill 2020年10月 -- 2021年10月 \\
     会长 \\
-    \resumeItem 负责校内程序设计竞赛的出题和测题以及协会招新,协助学院举办“远光杯”粤澳计算机程序设计大赛等多项大型活动,同时管理宣传部，技术部，竞赛部，组织部近40人,任期结束时在学生社团评比中所在社团获得总评\textbf{第一}的成绩
-    % 负责校内程序设计竞赛的出题和测题以及协会招新,协助学院举办“远光杯”粤澳计算机程序设计大赛等多项大型活动,同时管理宣传部，技术部，竞赛部，组织部近40人,任期结束时在学生社团评比中所在社团获得总评\textbf{第一}的成绩
-\end{tabularx}
+    \textbullet 负责校内程序设计竞赛的出题和测题以及协会招新，协助学院举办“远光杯”粤澳计算机程序设计大赛等多项大型活动 \\
+    \textbullet 同时管理宣传部，技术部，竞赛部，组织部近40人，任期结束时在学生社团评比中所在社团获得总评\textbf{第一}的成绩
+\end{apart}
+\ignorespaces
 
-%Experience
-\section{实习经验}
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{777} & \hfill Jan 2021 - present \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
-\end{tabularx}
+%-------------------------------------------------------------------------------
+%	实习经验
+%-------------------------------------------------------------------------------
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Designation} & \hfill Mar 2019 - Jan 2021 \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] long long line of blah blah that will wrap when the table fills the column width
-        \item[--] again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
-    \end{itemize}
-    \end{minipage}
-}
-\end{tabularx}
+\section{\textbf{实习经验}}
 
-%Projects
-\section{项目经历}
+%-------------------------------------------------------------------------------
+%	项目经历
+%-------------------------------------------------------------------------------
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
-\end{tabularx}
+\section{\textbf{项目经历}}
 
-%----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%	自我评价
+%-------------------------------------------------------------------------------
 
-%Interests/ Keywords/ Summary
-\section{自我评价}
+
+\section{\textbf{自我评价}}
 执着，喜欢思考，爱好广泛，拥有冷静的内心和炽热的灵魂，独特的思维角度 \\
 从第一次AC开始，从第一次发博客开始，在思考中不断学习，希望能和更加优秀的人一起共事 \\
 热爱开源，热爱技术，对代码的美感深深的吸引
